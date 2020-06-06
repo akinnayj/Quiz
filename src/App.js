@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Quizzes from "./quizPage";
+import Home from "./Home.js";
+import Buttons from "./categori.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+  let categories = ["Geografi", "Film", "Naturfag", "Språk", "Mat", "Mixed"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          test endring
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <div className="App">
+            <Link to="/" className="App-header">
+              <div className="App-header">Quiz</div>
+            </Link>
+
+            <Switch>
+              <Route path="/quizPage">
+                <Quizzes />
+              </Route>
+
+              <Route path="/">
+                <div className="ridge">
+                  {categories.map((categori) => (
+                    <Buttons kategori={categori} />
+                  ))}
+                </div>
+              </Route>
+            </Switch>
+          </div>
+        </nav>
+      </div>
+    </Router>
   );
 }
 
