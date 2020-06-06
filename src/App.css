@@ -23,7 +23,16 @@ button {
 
 .ridge {
   background-color: #faebd7;
-  margin: 60px;
+  margin: 50px;
   height: 400px;
   border-style: ridge;
+}
+
+.alternativer {
+}
+
+.button-alternativ {
+}
+
+.correct {
 }
