@@ -22,7 +22,7 @@ button {
 }
 
 .ridge {
-  background-color: pink;
+  background-color: #faebd7;
   margin: 60px;
   height: 400px;
   border-style: ridge;
