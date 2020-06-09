@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import Quizzes from "./quizPage";
-import Home from "./Home.js";
-import Buttons from "./categori.js";
+import Quizzes from "./Quizzes";
+import QuizAlternatives from "./QuizAlternatives";
+import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             </Link>
 
             <Switch>
-              <Route path="/quizPage">
+              <Route path="/Quizzes">
                 <Quizzes />
               </Route>
 

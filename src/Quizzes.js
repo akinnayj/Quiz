@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
+import QuizAlternatives from "./QuizAlternatives.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Quizzes({ kategori }) {
   const [count, setCount] = useState(8);
@@ -12,7 +14,7 @@ function Quizzes({ kategori }) {
     },
   ];
 
-  function checkAnswer(alternativ) {
+  function CheckAnswer(alternativ) {
     console.log(alternativ);
     if (alternativ == geografi[0].alternativer[geografi[0].riktig]) {
       console.log("Correcto");
@@ -28,20 +30,18 @@ function Quizzes({ kategori }) {
         Det er fire alternativer:
         <div className="alternativer">
           {geografi[0].alternativer.map((alternativ) => (
-            <button
-              onClick={() => checkAnswer(alternativ)}
-              className="button-alternativ"
-            >
-              {alternativ}
-            </button>
+            <Route>
+              <button
+                onClick={() => CheckAnswer(alternativ)}
+                className="button-alternativ"
+              >
+                {alternativ}
+              </button>
+            </Route>
           ))}
         </div>
-      </p>
-      <p>
-        <div className="correct"></div>
       </p>
     </div>
   );
 }
-
 export default Quizzes;

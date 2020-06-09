@@ -36,3 +36,11 @@ button {
 
 .correct {
 }
+
+.correcto {
+  background-color: green;
+}
+
+.falso {
+  background-color: red;
+}

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Buttons({ kategori }) {
   return (
-    <Link to="/quizPage" className="button-link">
+    <Link to="/Quizzes" className="button-link">
       <button onClick={ShowQuizzes}>{kategori}</button>
     </Link>
   );
