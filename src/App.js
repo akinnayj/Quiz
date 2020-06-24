@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Quizzes from "./Quizzes";
-import QuizAlternatives from "./QuizAlternatives";
 import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
