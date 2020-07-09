@@ -34,13 +34,14 @@ button {
 .button-alternativ {
 }
 
-.correct {
-}
-
 .correcto {
   background-color: green;
 }
 
 .falso {
   background-color: red;
+}
+
+.br {
+  line-height: 3em;
 }

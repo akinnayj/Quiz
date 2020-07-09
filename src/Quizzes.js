@@ -5,46 +5,52 @@ import QuizAlternatives from "./QuizAlternatives.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Quizzes({ kategori }) {
-  const [count, setCount] = useState(0);
   const [chosenIndex, setIndex] = useState(null);
+  const [check, setCheck] = useState(false);
+  const [answered, setAnswered] = useState(false);
   let geografi = [
     {
-      spørsmål: "Hvor høyt er mt everest",
-      alternativer: [100, 200, 300, 8000],
+      spørsmål: "Hvor bor Annika?",
+      alternativer: ["Bergen", "Trondheim", "Oslo", "Lillesand"],
       riktig: 3,
     },
   ];
 
   function CheckAnswer(alternativ) {
-    // whichButton[i] = geografi[0].alternativer[0];
+    setAnswered(true);
+    setIndex(alternativ);
 
-    if (alternativ == geografi[0].alternativer[geografi[0].riktig]) {
-      {
-        console.log("true");
-      }
+    if (alternativ == [geografi[0].riktig]) {
+      setCheck(true);
     } else {
-      {
-        console.log("false");
-      }
+      setCheck(false);
     }
   }
 
   return (
     <div className="ridge">
-      <p>{count}</p>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => setCount(0)}>Nullstille</button>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <p></p>
       <p>Spørsmål: {geografi[0].spørsmål}</p>
-      <p>
+      <p className="br">
         Det er fire alternativer:
         <div className="alternativer">
-          {geografi[0].alternativer.map((alternativ) => (
-            <button onClick={() => setIndex(CheckAnswer(alternativ))}>
-              {alternativ}
-            </button>
+          {geografi[0].alternativer.map((alternativ, index) => (
+            <button onClick={() => CheckAnswer(index)}>{alternativ}</button>
           ))}
+        </div>
+        <div>
+          <b>
+            {answered ? (
+              <p>
+                {check ? (
+                  <p className="correcto">Correcto</p>
+                ) : (
+                  <p className="falso">Falso</p>
+                )}
+              </p>
+            ) : (
+              <p>Svaret ditt er feil, prøv å trykk på en knapp</p>
+            )}
+          </b>
         </div>
       </p>
     </div>
