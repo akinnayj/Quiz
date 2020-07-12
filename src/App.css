@@ -28,10 +28,8 @@ button {
   border-style: ridge;
 }
 
-.alternativer {
-}
-
 .button-alternativ {
+  margin: 20px;
 }
 
 .correcto {
@@ -44,4 +42,8 @@ button {
 
 .br {
   line-height: 3em;
+}
+
+.right {
+  left: 5px;
 }

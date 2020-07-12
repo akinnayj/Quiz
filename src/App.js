@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  let categories = ["Geografi", "Film", "Naturfag", "Språk", "Mat", "Mixed"];
+  let categories = ["Geografi", "Film", "Om Annika", "Språk", "Mat", "Mixed"];
 
   return (
     <Router>
@@ -15,7 +15,6 @@ function App() {
             <Link to="/" className="App-header">
               <div className="App-header">Quiz</div>
             </Link>
-
             <Switch>
               <Route path="/Quizzes">
                 <Quizzes />
@@ -23,6 +22,9 @@ function App() {
 
               <Route path="/">
                 <div className="ridge">
+                  <div>
+                    <h2>Velg en kategori</h2>
+                  </div>
                   {categories.map((categori) => (
                     <Buttons kategori={categori} />
                   ))}
