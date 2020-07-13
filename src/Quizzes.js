@@ -52,7 +52,7 @@ function Quizzes({ kategori }) {
         <div>
           <b>
             {answered ? (
-              <p>
+              <div>
                 {check ? (
                   <p className="correcto">Correcto</p>
                 ) : (
@@ -60,7 +60,7 @@ function Quizzes({ kategori }) {
                 )}
                 <button className="button-alternativ">Prøv igjen</button>
                 <button className="button-alternativ">Next</button>
-              </p>
+              </div>
             ) : (
               <p>Trykk på knappene for å svare</p>
             )}

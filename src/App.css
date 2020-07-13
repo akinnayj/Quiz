@@ -33,11 +33,11 @@ button {
 }
 
 .correcto {
-  background-color: green;
+  background-color: #8fbc80;
 }
 
 .falso {
-  background-color: red;
+  background-color: #ff4d4d;
 }
 
 .br {
