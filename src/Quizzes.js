@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import QuizAlternatives from "./QuizAlternatives.js";
+import { geografi } from "./QuizList.js";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -10,37 +10,40 @@ function Quizzes({ kategori }) {
   const [check, setCheck] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [score, setScore] = useState(0);
-  const [tryagain, setTryagain] = useState(false);
-
-  let geografi = [
-    {
-      spørsmål: "Hvor bor Annika?",
-      alternativer: ["Bergen", "Trondheim", "Oslo", "Lillesand"],
-      riktig: 3,
-    },
-  ];
+  const [questionNumber, setQuestionNumber] = useState(0);
+  let totalScore = 10;
 
   function CheckAnswer(alternativ) {
     setAnswered(true);
 
     setIndex(alternativ);
 
-    if (alternativ == [geografi[0].riktig]) {
+    if (alternativ == [geografi[questionNumber].riktig]) {
       setCheck(true);
-      setScore(score + 1);
+      if (score < 10) {
+        setScore(score + 1);
+      }
     } else {
       setCheck(false);
-      setScore(score - 1);
+      if (score > -10) {
+        setScore(score - 1);
+      }
     }
+  }
+
+  function next() {
+    if (questionNumber < geografi.length - 1) {
+      setQuestionNumber(questionNumber + 1);
+    }
+    setAnswered(false);
   }
 
   return (
     <div className="ridge">
-      <p>Spørsmål: {geografi[0].spørsmål}</p>
+      <h2>{geografi[questionNumber].spørsmål}</h2>
       <p className="br">
-        Det er fire alternativer:
         <div>
-          {geografi[0].alternativer.map((alternativ, index) => (
+          {geografi[questionNumber].alternativer.map((alternativ, index) => (
             <button
               className="button-alternativ"
               onClick={() => CheckAnswer(index)}
@@ -59,13 +62,17 @@ function Quizzes({ kategori }) {
                   <p className="falso">Falso</p>
                 )}
                 <button className="button-alternativ">Prøv igjen</button>
-                <button className="button-alternativ">Next</button>
+                <button className="button-alternativ" onClick={next}>
+                  Next
+                </button>
               </div>
             ) : (
               <p>Trykk på knappene for å svare</p>
             )}
           </b>
-          <p className="right">Du har {score} av 10 poeng</p>
+          <p className="right">
+            Du har {score} av {totalScore} poeng!
+          </p>
         </div>
       </p>
     </div>
