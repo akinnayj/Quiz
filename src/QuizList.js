@@ -48,7 +48,7 @@ export const quizList = [
       spørsmål: "Hvilket lag ligger ytterst/høyest i atmosfæren?",
       alternativer: [
         "Mesosfæren",
-        "Stratosføren",
+        "Stratosfæren",
         "Troposfæren",
         "Termosfæren",
       ],
@@ -59,7 +59,7 @@ export const quizList = [
     {
       spørsmål: "Hva heter hovedstaden i Cuba?",
       alternativer: ["Uganda", "Cuba city", "Wakanda", "Havana"],
-      riktig: 0,
+      riktig: 3,
     },
     {
       spørsmål: "Hvor ligger verdens høyeste fjell?",
