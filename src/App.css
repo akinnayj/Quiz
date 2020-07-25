@@ -10,19 +10,29 @@ body {
   font-size: 70px;
   text-decoration: none;
   color: white;
+  font-family: monospace;
 }
 
 .button-link {
   margin: 30px;
 }
 
+.font {
+  font-family: monospace;
+  font-size: 30px;
+}
+.font-fam {
+  font-family: monospace;
+}
+
 button {
   color: green;
-  font-size: 2em;
+  font-size: 25px;
+  font-family: monospace;
 }
 
 .ridge {
-  background-color: #faebd7;
+  background-color: #b3ffb3;
   margin: 45px;
   height: 420px;
   border-style: ridge;
@@ -30,25 +40,40 @@ button {
 
 .button-alternativ {
   margin: 20px;
+  font-family: monospace;
 }
 
 .correcto {
   background-color: #8fbc80;
+  font-family: monospace;
+  font-size: 20px;
 }
 
 .falso {
   background-color: #ff4d4d;
+  font-family: monospace;
+  font-size: 20px;
 }
 
 .br {
   line-height: 3em;
 }
 
-.right {
+.left {
   left: 5px;
+  font-family: monospace;
 }
 .finishButton {
   color: Black;
   font-size: 2em;
   text-decoration: none;
+  font-family: monospace;
+}
+
+.finish-margin {
+  margin: 50px;
+}
+.score {
+  font-family: monospace;
+  font-size: 20px;
 }

@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  let categories = ["Hvor bor?", "Matte", "Natur", "Geografi"];
+  let categories = ["Mixed", "Matte", "Natur", "Geografi"];
 
   return (
     <Router>
@@ -20,7 +20,7 @@ function App() {
               <Route path="/" exact>
                 <div className="ridge">
                   <div>
-                    <h2>Velg en kategori</h2>
+                    <p className="font">Velg en kategori</p>
                   </div>
                   {categories.map((categori, index) => (
                     <Buttons indexNr={index} kategori={categori} />

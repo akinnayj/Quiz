@@ -24,12 +24,12 @@ function Quizzes({ kategori }) {
 
     if (alternativ == [quizList[categoryNumber][questionNumber].riktig]) {
       setCheck(true);
-      if (score < 10) {
+      if (score < quizList[categoryNumber].length) {
         setScore(score + 1);
       }
     } else {
       setCheck(false);
-      if (score > -10) {
+      if (score > -quizList[categoryNumber].length) {
         setScore(score - 1);
       }
     }
@@ -52,53 +52,55 @@ function Quizzes({ kategori }) {
 
   return (
     <div className="ridge">
-      <h2>{quizList[categoryNumber][questionNumber].spørsmål}</h2>
-      <p className="right">
-        Du har {score} av {totalScore} poeng!
-      </p>
       <p className="br">
         <div>
-          {quizList[categoryNumber][questionNumber].alternativer.map(
-            (alternativ, index) => (
-              <button
-                className="button-alternativ"
-                onClick={() => CheckAnswer(index)}
-              >
-                {alternativ}
-              </button>
-            )
+          {finish ? (
+            <div className="finish-margin">
+              <Link to="/" className="finishButton">
+                The quiz is over
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <h2 className="font">
+                {quizList[categoryNumber][questionNumber].spørsmål}
+              </h2>
+              {quizList[categoryNumber][questionNumber].alternativer.map(
+                (alternativ, index) => (
+                  <button
+                    className="button-alternativ"
+                    onClick={() => CheckAnswer(index)}
+                  >
+                    {alternativ}
+                  </button>
+                )
+              )}
+              {answered ? (
+                <div>
+                  {check ? (
+                    <p className="correcto">Correcto</p>
+                  ) : (
+                    <p className="falso">Falso</p>
+                  )}
+                  <button className="button-alternativ" onClick={again}>
+                    Prøv igjen
+                  </button>
+                  <button className="button-alternativ" onClick={next}>
+                    Next
+                  </button>
+                </div>
+              ) : (
+                <p className="font-fam">Trykk på knappene for å svare</p>
+              )}
+            </div>
           )}
+          <p className="score">
+            Du har {score} av {totalScore} poeng!
+          </p>
         </div>
-        <div>
-          <b>
-            {answered ? (
-              <div>
-                {check ? (
-                  <p className="correcto">Correcto</p>
-                ) : (
-                  <p className="falso">Falso</p>
-                )}
-                <button className="button-alternativ" onClick={again}>
-                  Prøv igjen
-                </button>
-                <button className="button-alternativ" onClick={next}>
-                  Next
-                </button>
-              </div>
-            ) : (
-              <p>Trykk på knappene for å svare</p>
-            )}
 
-            {finish ? (
-              <div>
-                <Link to="/" className="finishButton">
-                  Ferdig!!
-                </Link>
-              </div>
-            ) : (
-              <p></p>
-            )}
-          </b>
+        <div>
+          <b></b>
         </div>
       </p>
     </div>
