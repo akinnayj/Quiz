@@ -47,3 +47,8 @@ button {
 .right {
   left: 5px;
 }
+.finishButton {
+  color: Black;
+  font-size: 2em;
+  text-decoration: none;
+}

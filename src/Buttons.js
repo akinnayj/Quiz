@@ -1,18 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useHistory } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function Buttons({ kategori }) {
+function Buttons({ kategori, indexNr }) {
+  const history = useHistory();
+
+  function showQuizzes() {
+    history.push("/Quizzes", { category: indexNr });
+  }
+
   return (
-    <Link to="/Quizzes" className="button-link">
-      <button className="button-alternativ" onClick={ShowQuizzes}>
-        {kategori}
-      </button>
-    </Link>
+    <button className="button-alternativ" onClick={showQuizzes}>
+      {kategori}
+    </button>
   );
 }
-
-function ShowQuizzes() {}
 
 export default Buttons;

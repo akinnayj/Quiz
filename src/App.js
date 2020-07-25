@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  let categories = ["Geografi", "Naturfag", "Hvor bor?", "Språk"];
+  let categories = ["Hvor bor?", "Matte", "Natur", "Geografi"];
 
   return (
     <Router>
@@ -22,8 +22,8 @@ function App() {
                   <div>
                     <h2>Velg en kategori</h2>
                   </div>
-                  {categories.map((categori) => (
-                    <Buttons kategori={categori} />
+                  {categories.map((categori, index) => (
+                    <Buttons indexNr={index} kategori={categori} />
                   ))}
                 </div>
               </Route>
