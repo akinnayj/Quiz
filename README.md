@@ -8,6 +8,6 @@
   Teknologier som ble brukt: React, CSS.
   
   Bilder fra Quizzes:
-  ![Homepage](Quiz/public/Homepage.PNG)
+  ![Homepage.PNG](Quiz/Homepage.PNG)
 
 
