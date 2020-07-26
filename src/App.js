@@ -13,13 +13,13 @@ function App() {
         <nav>
           <div className="App">
             <Link to="/" className="App-header">
-              <div className="App-header">Quiz</div>
+              <div className="App-header">Quizzes</div>
             </Link>
 
             <Switch>
               <Route path="/" exact>
                 <div className="ridge">
-                  <div>
+                  <div className="top">
                     <p className="font">Velg en kategori</p>
                   </div>
                   {categories.map((categori, index) => (

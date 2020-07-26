@@ -13,13 +13,12 @@ function Quizzes({ kategori }) {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [tryagian, setTryagain] = useState(false);
   const [finish, setFinish] = useState(false);
-  const [totalScore, setTotalScore] = useState(quizList[0].length);
   const location = useLocation();
   const categoryNumber = location.state.category;
+  const [totalScore, setTotalScore] = useState(quizList[categoryNumber].length);
 
   function CheckAnswer(alternativ) {
     setAnswered(true);
-
     setIndex(alternativ);
 
     if (alternativ == [quizList[categoryNumber][questionNumber].riktig]) {
@@ -39,7 +38,9 @@ function Quizzes({ kategori }) {
     if (questionNumber < quizList[categoryNumber].length - 1) {
       setQuestionNumber(questionNumber + 1);
     }
+
     setAnswered(false);
+
     if (questionNumber == quizList[categoryNumber].length - 1) {
       setFinish(true);
     }
@@ -52,8 +53,8 @@ function Quizzes({ kategori }) {
 
   return (
     <div className="ridge">
-      <p className="br">
-        <div>
+      <break>
+        <div className="top">
           {finish ? (
             <div className="finish-margin">
               <Link to="/" className="finishButton">
@@ -90,19 +91,16 @@ function Quizzes({ kategori }) {
                   </button>
                 </div>
               ) : (
-                <p className="font-fam">Trykk på knappene for å svare</p>
+                <p className="font-fam">Trykk på en knapp for å svare</p>
               )}
             </div>
           )}
+
           <p className="score">
             Du har {score} av {totalScore} poeng!
           </p>
         </div>
-
-        <div>
-          <b></b>
-        </div>
-      </p>
+      </break>
     </div>
   );
 }

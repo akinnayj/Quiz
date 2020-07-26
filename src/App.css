@@ -2,7 +2,9 @@ body {
   background-color: white;
   text-align: center;
 }
-
+.top {
+  padding-top: 60px;
+}
 .App-header {
   background-color: #8fbc80;
   width: 100%;
@@ -36,23 +38,36 @@ button {
   margin: 45px;
   height: 420px;
   border-style: ridge;
+  border-radius: 5px;
+  border-style: ridge;
 }
 
 .button-alternativ {
   margin: 20px;
   font-family: monospace;
+  border-radius: 5px;
 }
 
 .correcto {
   background-color: #8fbc80;
   font-family: monospace;
   font-size: 20px;
+  position: center;
+  margin: auto;
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .falso {
   background-color: #ff4d4d;
   font-family: monospace;
   font-size: 20px;
+  position: center;
+  margin: auto;
+  border-radius: 5px;
+  width: 70%;
+  padding: 10px;
 }
 
 .br {
