@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 .top {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 .App-header {
   background-color: #8fbc80;
@@ -12,16 +12,15 @@ body {
   font-size: 70px;
   text-decoration: none;
   color: white;
-  font-family: monospace;
-}
 
-.button-link {
-  margin: 30px;
+  font-family: monospace;
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.25);
 }
 
 .font {
   font-family: monospace;
   font-size: 30px;
+  color: green;
 }
 .font-fam {
   font-family: monospace;
@@ -52,6 +51,7 @@ button {
   background-color: #8fbc80;
   font-family: monospace;
   font-size: 20px;
+  color: #004d1a;
   position: center;
   margin: auto;
   width: 70%;
@@ -63,6 +63,7 @@ button {
   background-color: #ff4d4d;
   font-family: monospace;
   font-size: 20px;
+  color: #4d0000;
   position: center;
   margin: auto;
   border-radius: 5px;
@@ -79,7 +80,7 @@ button {
   font-family: monospace;
 }
 .finishButton {
-  color: Black;
+  color: green;
   font-size: 2em;
   text-decoration: none;
   font-family: monospace;
@@ -91,4 +92,5 @@ button {
 .score {
   font-family: monospace;
   font-size: 20px;
+  color: green;
 }

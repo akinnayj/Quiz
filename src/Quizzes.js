@@ -63,9 +63,11 @@ function Quizzes({ kategori }) {
             </div>
           ) : (
             <div>
-              <h2 className="font">
-                {quizList[categoryNumber][questionNumber].spørsmål}
-              </h2>
+              <div>
+                <h3 className="font">
+                  {quizList[categoryNumber][questionNumber].spørsmål}
+                </h3>
+              </div>
               {quizList[categoryNumber][questionNumber].alternativer.map(
                 (alternativ, index) => (
                   <button

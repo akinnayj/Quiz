@@ -5,7 +5,7 @@ import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  let categories = ["Mixed", "Matte", "Natur", "Geografi"];
+  let categories = ["Mixed", "Matte", "Natur", "Geografi", "Logo quiz"];
 
   return (
     <Router>
