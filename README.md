@@ -8,6 +8,6 @@
   Teknologier som ble brukt: React, CSS.
   
   Bilder fra Quizzes:
-  ![Homepage.PNG](https://github.com/akinnayj/Quiz/blob/master/Homepage.PNG)
+  ![Homepage.PNG](https://github.com/akinnayj/Quiz/blob/master/src/homepage.PNG)
 
 
