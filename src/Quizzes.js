@@ -4,11 +4,13 @@ import "./App.css";
 import { quizList } from "./QuizList.js";
 import { useLocation } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { hintIMG } from "./img/hint.png";
 
 function Quizzes({ kategori }) {
   const [chosenIndex, setIndex] = useState(0);
   const [check, setCheck] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [timer, setTimer] = useState(false);
   const [score, setScore] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [tryagian, setTryagain] = useState(false);
@@ -16,10 +18,13 @@ function Quizzes({ kategori }) {
   const location = useLocation();
   const categoryNumber = location.state.category;
   const [totalScore, setTotalScore] = useState(quizList[categoryNumber].length);
+  const [hint, setHint] = useState(false);
+  const [hintCounter, setHintCounter] = useState(0);
 
   function CheckAnswer(alternativ) {
     setAnswered(true);
     setIndex(alternativ);
+    setTimer(true);
 
     if (alternativ == [quizList[categoryNumber][questionNumber].riktig]) {
       setCheck(true);
@@ -44,11 +49,20 @@ function Quizzes({ kategori }) {
     if (questionNumber == quizList[categoryNumber].length - 1) {
       setFinish(true);
     }
+    setHint(false);
+  }
+
+  function hintButton() {
+    if (hintCounter < 3) {
+      setHintCounter(hintCounter + 1);
+      setHint(quizList[categoryNumber][questionNumber].hint);
+    }
   }
 
   function again() {
     setTryagain(true);
     setAnswered(false);
+    setHint(false);
   }
 
   return (
@@ -63,6 +77,12 @@ function Quizzes({ kategori }) {
             </div>
           ) : (
             <div>
+              <button
+                id="close-CSS"
+                className="button-alternativ hintPlace"
+                onClick={hintButton}
+              ></button>
+              <p>Du har bruk {hintCounter} av 3 hints.</p>
               <div>
                 <h3 className="font">
                   {quizList[categoryNumber][questionNumber].spørsmål}
@@ -88,6 +108,7 @@ function Quizzes({ kategori }) {
                   <button className="button-alternativ" onClick={again}>
                     Prøv igjen
                   </button>
+
                   <button className="button-alternativ" onClick={next}>
                     Next
                   </button>
@@ -98,9 +119,13 @@ function Quizzes({ kategori }) {
             </div>
           )}
 
-          <p className="score">
-            Du har {score} av {totalScore} poeng!
-          </p>
+          {hint ? (
+            <p className="scoreANDhint">Hintet er {hint}</p>
+          ) : (
+            <p className="scoreANDhint">
+              Du har {score} av {totalScore} poeng!
+            </p>
+          )}
         </div>
       </break>
     </div>

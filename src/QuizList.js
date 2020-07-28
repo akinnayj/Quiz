@@ -8,17 +8,20 @@ export const quizList = [
       spørsmål: "Hva heter hovedstaden i Cuba?",
       alternativer: ["Uganda", "Cuba City", "Wakanda", "Havana"],
       riktig: 3,
+      hint: "onana",
     },
 
     {
       spørsmål: "Hvor mange oksygen atomer finnes det i CO2?",
       alternativer: [2, 4, 12, 22],
       riktig: 0,
+      hint: "Antall atomer defineres bak selve grunnstoffet",
     },
     {
       spørsmål: "Hva er 30 : 5?",
       alternativer: [6, 8, 2, 4],
       riktig: 0,
+      hint: "det du må gange 5 med for å få 30.",
     },
     {
       spørsmål: "Hvor ligger verdens høyeste fjell?",
@@ -29,16 +32,19 @@ export const quizList = [
         "Kina og India",
       ],
       riktig: 2,
+      hint: "Mount Everest.",
     },
     {
       spørsmål: "5x+7=10+4x , Hva er x?",
       alternativer: [2, 3, 4, 5],
       riktig: 1,
+      hint: "flytt og bytt",
     },
     {
       spørsmål: "Hvilke planet ligger ved siden av Jorda?",
       alternativer: ["Jupiter", "Uranus", "Venus", "Sola"],
       riktig: 2,
+      hint: "den andre naboen er Mars.",
     },
     {
       spørsmål: "Hvilket lag ligger ytterst/høyest i atmosfæren?",
@@ -67,16 +73,19 @@ export const quizList = [
       spørsmål: "5x+7=10+4x , Hva er x?",
       alternativer: [2, 3, 4, 5],
       riktig: 1,
+      hint: "flytt og bytt",
     },
     {
       spørsmål: "Hva er π?",
       alternativer: [3.14813, 3.141572, 3.14296, 3.141592],
       riktig: 3,
+      hint: "at den begynner med 3.14",
     },
     {
       spørsmål: "Hvordan regner man arealet til et trekant?",
       alternativer: ["l*b*h", "*g*h*2", "g*h", "g*h/2"],
       riktig: 3,
+      hint: "firkant også trekant",
     },
   ],
   [
@@ -131,7 +140,7 @@ export const quizList = [
     {
       spørsmål: (
         <img
-          src={require("./logo1.png")}
+          src={require("./img/logo1.png")}
           style={{ width: "100px", borderRadius: "10px" }}
         />
       ),
@@ -141,7 +150,7 @@ export const quizList = [
     {
       spørsmål: (
         <img
-          src={require("./logo2.png")}
+          src={require("./img/logo2.png")}
           style={{ width: "100px", borderRadius: "10px" }}
         />
       ),
@@ -151,7 +160,7 @@ export const quizList = [
     {
       spørsmål: (
         <img
-          src={require("./logo3.png")}
+          src={require("./img/logo3.png")}
           style={{ width: "100px", borderRadius: "10px" }}
         />
       ),

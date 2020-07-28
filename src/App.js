@@ -3,6 +3,7 @@ import "./App.css";
 import Quizzes from "./Quizzes";
 import Buttons from "./Buttons.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Popup from "reactjs-popup";
 
 function App() {
   let categories = ["Mixed", "Matte", "Natur", "Geografi", "Logo quiz"];
