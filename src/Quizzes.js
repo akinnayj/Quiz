@@ -79,10 +79,12 @@ function Quizzes({ kategori }) {
             <div>
               <button
                 id="close-CSS"
-                className="button-alternativ hintPlace"
+                className="button-alternativ hintPosistion"
                 onClick={hintButton}
-              ></button>
-              <p>Du har bruk {hintCounter} av 3 hints.</p>
+              >
+                {hintCounter} av 3
+              </button>
+
               <div>
                 <h3 className="font">
                   {quizList[categoryNumber][questionNumber].spørsmål}

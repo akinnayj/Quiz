@@ -109,13 +109,17 @@ button {
   background-size: 100% 100%;
   height: 45px;
   width: 45px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 #close-CSS:hover {
   opacity: 1;
 }
-.hintPlace {
+.hintPosistion {
   position: absolute;
   right: 200px;
+  font-size: 20px;
+  font-weight: bolder;
+  order: 2;
+  align: right|middle;
 }

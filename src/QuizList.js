@@ -55,16 +55,19 @@ export const quizList = [
         "Termosfæren",
       ],
       riktig: 3,
+      hint: "det du har kakao i",
     },
     {
       spørsmål: "Hva er 5 x 5?",
       alternativer: [34, 78, 25, 100],
       riktig: 2,
+      hint: "5+5+5+5+5",
     },
     {
       spørsmål: "Hvor ligger Mount Rushmore?",
       alternativer: ["Stone", "Keystone", "Washington DC", "Seattle"],
       riktig: 1,
+      hint: "USA",
     },
   ],
   [
@@ -94,11 +97,13 @@ export const quizList = [
       spørsmål: "Hvor mange oksygen atomer finnes det i CO2?",
       alternativer: [2, 4, 12, 22],
       riktig: 0,
+      hint: "Antall atomer defineres bak selve grunnstoffet",
     },
     {
       spørsmål: "Hvilke planet ligger ved siden av Jorda?",
       alternativer: ["Jupiter", "Uranus", "Venus", "Sola"],
       riktig: 2,
+      hint: "den andre naboen er Mars.",
     },
     {
       spørsmål: "Hvilket lag ligger ytterst/høyest i atmosfæren?",
@@ -109,6 +114,7 @@ export const quizList = [
         "Termosfæren",
       ],
       riktig: 3,
+      hint: "det du har kakao i",
     },
   ],
   [
@@ -117,6 +123,7 @@ export const quizList = [
       spørsmål: "Hva heter hovedstaden i Cuba?",
       alternativer: ["Uganda", "Cuba city", "Wakanda", "Havana"],
       riktig: 3,
+      hint: "onana",
     },
     {
       spørsmål: "Hvor ligger verdens høyeste fjell?",
@@ -127,11 +134,13 @@ export const quizList = [
         "Kina og India",
       ],
       riktig: 2,
+      hint: "Mount Everest.",
     },
     {
       spørsmål: "Hvor ligger Mount Rushmore?",
       alternativer: ["Stone", "Keystone", "Washington DC", "Seattle"],
       riktig: 1,
+      hint: "USA",
     },
   ],
   [
@@ -146,6 +155,7 @@ export const quizList = [
       ),
       alternativer: ["MCD", "KFC", "Burger King", "Subway"],
       riktig: 0,
+      hint: "Burger",
     },
     {
       spørsmål: (
@@ -156,6 +166,7 @@ export const quizList = [
       ),
       alternativer: ["Opel", "Hyundai", "Toyota", "Honda"],
       riktig: 3,
+      hint: "H",
     },
     {
       spørsmål: (
@@ -166,6 +177,7 @@ export const quizList = [
       ),
       alternativer: ["Apple", "Android", "OSI", "Cookies"],
       riktig: 1,
+      hint: "OPS",
     },
   ],
 ];
